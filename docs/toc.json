@@ -1,18 +1,44 @@
 [
   {
     "name": "Introduction",
-    "type": "",
     "path": "/",
     "source": "index.md"
   },
   {
-    "name": "cat",
-    "type": "category",
+    "name": "Development",
+    "type": "main-category",
     "children": [
       {
-        "name": "Foo",
-        "type": "",
-        "path": "/cat/foo.md"
+        "name": "Installing NativeScript",
+        "path": "/installing-nativescript",
+        "source": "installing-nativescript.md"
+      }
+    ]
+  },
+  {
+    "name": "Elements",
+    "type": "main-category",
+    "children": [
+      {
+        "name": "Layout",
+        "type": "sub-category",
+        "children": [
+          {
+            "name": "AbsoluteLayout",
+            "path": "/elements/absolute-layout",
+            "source": "elements/layout/absolute-layout.md"
+          }
+        ]
+      },
+      {
+        "name": "Components",
+        "type": "sub-category",
+        "children": []
+      },
+      {
+        "name": "Dialogs",
+        "type": "sub-category",
+        "children": []
       }
     ]
   }

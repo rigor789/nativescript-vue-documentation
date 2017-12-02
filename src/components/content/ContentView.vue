@@ -14,10 +14,11 @@
       ...mapState({
         currentContent: state => state.current.content
       }),
-      ...mapState(['toc', 'lang']),
+      ...mapState(['flat_toc', 'lang']),
       currentContentSource() {
         const route = this.$route;
-        const matched = this.toc.find((r) => r.path === route.path);
+
+        const matched = this.flat_toc.find((r) => r.path === route.path);
 
         if (!matched) {
           return null;
@@ -37,11 +38,10 @@
             return this.$router.replace('/404');
         }
 
-        this.$http.get(`${this.lang}/${source}`).then(res => {
+        this.$http.get(`${window.location.origin}/${this.lang}/${source}`).then(res => {
           if(res.status === 404) {
             return this.$router.replace('/404');
           }
-
 
           const html = this.$md.render(res.data);
           this.$store.commit('SET_CURRENT_CONTENT', html);

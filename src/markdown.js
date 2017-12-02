@@ -1,6 +1,7 @@
 import MarkdownIt from 'markdown-it'
 import MarkdownItFrontMatter from 'markdown-it-front-matter'
 import MarkdownItContainer from 'markdown-it-container'
+import MarkdownItExtends from '~/markdown-it-extends'
 
 import * as matter from 'gray-matter'
 
@@ -12,10 +13,12 @@ export default function (store) {
     store.commit('SET_FRONT_MATTER', parsed)
   });
 
-  md.use(MarkdownItContainer, 'demo', {
-    render(tokens, idx) {
-    }
-  });
+  md.use(MarkdownItExtends, store);
+
+  // md.use(MarkdownItContainer, 'demo', {
+  //   render(tokens, idx) {
+  //   }
+  // });
 
   return md;
 };

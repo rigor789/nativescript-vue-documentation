@@ -13,10 +13,10 @@ const routes = [
   {
     path: '/404',
     component: null
-  }
+  },
 ];
 
 export default new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes
 });

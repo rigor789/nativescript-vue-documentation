@@ -1,6 +1,9 @@
 <template>
     <li class="NavigationItem" :class="type">
-        <span v-if="name">{{ name }} ({{ path }})</span>
+        <router-link v-if="path" :to="path.replace('.md', '')">
+            {{ name }}
+        </router-link>
+        <span v-else-if="name">{{ name }}</span>
 
         <ul v-if="children">
             <NavigationItem
@@ -31,7 +34,11 @@
 </script>
 
 <style scoped>
-    .type-category > span {
+    .type-main-category > span {
         color: red;
+    }
+
+    .type-sub-category > span {
+        color: blue;
     }
 </style>

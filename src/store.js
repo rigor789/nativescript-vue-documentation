@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     toc: [],
+    flat_toc: [],
     lang: 'en',
     current: {
       matter: {},
@@ -15,13 +16,16 @@ export default new Vuex.Store({
 
   mutations: {
     SET_TOC(state, toc) {
-      state.toc = toc
+      state.toc = toc;
+    },
+    SET_FLAT_TOC(state, flat_toc) {
+      state.flat_toc = flat_toc;
     },
     SET_CURRENT_CONTENT(state, content) {
       state.current.content = content;
     },
     SET_FRONT_MATTER(state, matter) {
-      state.current.matter = matter
+      state.current.matter = matter;
     }
   }
 })

@@ -3,7 +3,7 @@
         <ContentPane>
             <router-view />
         </ContentPane>
-b
+
         <PreviewPane v-if="frontMatter.preview">
             {{ frontMatter.preview }}
         </PreviewPane>
