@@ -1,7 +1,16 @@
+import Vue from 'vue'
 import Vuex from 'vuex'
 
-export default new Vuex.Store({
-  state: {},
+Vue.use(Vuex);
 
-  mutations: {}
+export default new Vuex.Store({
+  state: {
+    toc: []
+  },
+
+  mutations: {
+    SET_TOC(state, toc) {
+      state.toc = toc
+    }
+  }
 })

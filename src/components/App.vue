@@ -1,25 +1,29 @@
 <template>
     <div class="App">
-        <Sidebar/>
+        <AppSidebar/>
 
         <div>
-            <Header/>
+            <AppHeader/>
 
-            <Content/>
+            <AppContent/>
         </div>
     </div>
 </template>
 
 <script>
-  import Sidebar from './Sidebar';
-  import Header from './Header';
-  import Content from './Content';
+  import AppSidebar from './AppSidebar';
+  import AppHeader from './AppHeader';
+  import AppContent from './AppContent';
 
   export default {
     components: {
-      Sidebar,
-      Header,
-      Content
+      AppSidebar,
+      AppHeader,
+      AppContent
     }
   }
 </script>
+
+<style>
+    @import 'https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css';
+</style>

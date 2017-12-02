@@ -4,7 +4,8 @@
   "description": "NativeScript-Vue documentation",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.conf.js"
+    "build": "webpack --config webpack.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config webpack.conf.js"
   },
   "keywords": [
     "nativescript",
@@ -14,6 +15,7 @@
   "author": "rigor789",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.17.1",
     "vue": "^2.5.9",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.8.0",
@@ -21,6 +23,16 @@
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
-    "webpack": "^3.9.1"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "vue-loader": "^13.5.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.9",
+    "webpack": "^3.9.1",
+    "webpack-dev-server": "^2.9.5"
   }
 }
