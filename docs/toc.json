@@ -4,5 +4,16 @@
     "type": "",
     "path": "/",
     "source": "index.md"
+  },
+  {
+    "name": "cat",
+    "type": "category",
+    "children": [
+      {
+        "name": "Foo",
+        "type": "",
+        "path": "/cat/foo.md"
+      }
+    ]
   }
 ]

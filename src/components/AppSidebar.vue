@@ -1,24 +1,19 @@
 <template>
-    <div class="Sidebar">
+    <div class="AppSidebar">
         <h1>Sidebar</h1>
 
-        <ul>
-            <li v-for="entry in toc" :class="entry.type">
-                {{ entry.name }}
-            </li>
+        <ul class="list-reset">
+            <NavigationItem :children="toc"/>
         </ul>
     </div>
 </template>
 
 <script>
-    import { mapState } from 'vuex'
+  import { mapState } from 'vuex'
 
-    export default {
-        computed: {
-          ...mapState(['toc'])
-        },
-        created() {
-
-        }
+  export default {
+    computed: {
+      ...mapState(['toc'])
     }
+  }
 </script>

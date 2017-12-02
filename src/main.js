@@ -8,11 +8,14 @@ import store from './store'
 import markdown from './markdown'
 
 import App from './components/App'
+import NavigationItem from './components/NavigationItem'
 
 Vue.use(VueScrollTo);
 
 Vue.prototype.$http = axios.create();
 Vue.prototype.$md = markdown(store);
+
+Vue.component('NavigationItem', NavigationItem);
 
 sync(store, router);
 

@@ -42,9 +42,9 @@
             return this.$router.replace('/404');
           }
 
-          this.$store.commit('SET_CURRENT_CONTENT', res.data);
 
-          console.log(this.$md.render(res.data));
+          const html = this.$md.render(res.data);
+          this.$store.commit('SET_CURRENT_CONTENT', html);
         })
       }
     }
