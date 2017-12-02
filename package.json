@@ -16,6 +16,10 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.17.1",
+    "gray-matter": "^3.1.1",
+    "markdown-it": "^8.4.0",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-front-matter": "^0.1.2",
     "vue": "^2.5.9",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.8.0",

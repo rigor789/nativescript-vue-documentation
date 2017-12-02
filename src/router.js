@@ -7,8 +7,12 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    path: '/*',
     component: ContentView
+  },
+  {
+    path: '/404',
+    component: null
   }
 ];
 

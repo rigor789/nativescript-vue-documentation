@@ -5,12 +5,14 @@ import { sync } from 'vuex-router-sync'
 
 import router from './router'
 import store from './store'
+import markdown from './markdown'
 
 import App from './components/App'
 
 Vue.use(VueScrollTo);
 
 Vue.prototype.$http = axios.create();
+Vue.prototype.$md = markdown(store);
 
 sync(store, router);
 

@@ -16,6 +16,11 @@
   import AppContent from './AppContent';
 
   export default {
+    created() {
+      this.$http.get('toc.json').then(({ data }) => {
+        this.$store.commit('SET_TOC', data);
+      })
+    },
     components: {
       AppSidebar,
       AppHeader,

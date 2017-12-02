@@ -1,6 +1,8 @@
 [
   {
     "name": "Introduction",
-    "type": ""
+    "type": "",
+    "path": "/",
+    "source": "index.md"
   }
 ]

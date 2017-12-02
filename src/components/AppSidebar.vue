@@ -2,7 +2,11 @@
     <div class="Sidebar">
         <h1>Sidebar</h1>
 
-
+        <ul>
+            <li v-for="entry in toc" :class="entry.type">
+                {{ entry.name }}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -14,9 +18,7 @@
           ...mapState(['toc'])
         },
         created() {
-          this.$http.get('toc.json').then(({ data }) => {
-            this.$store.commit('SET_TOC', data);
-          })
+
         }
     }
 </script>
