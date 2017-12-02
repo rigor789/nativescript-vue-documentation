@@ -1,4 +1,5 @@
 import axios from 'axios'
+import grayMatter from 'gray-matter';
 
 /*
   This code is probably very unoptimized, but it works for now...
@@ -7,9 +8,6 @@ import axios from 'axios'
 function processExtend(state, matter) {
   state.md.isExtending = false;
   state.md.extendMatter = null;
-
-  console.log(state);
-  console.table(state.tokens.map(token => ({ type: token.type, tag: token.tag })));
 
   if (matter.rename) {
     matter.rename.forEach(rename => renameHeading(state, rename))
@@ -98,7 +96,10 @@ export default function (md, store) {
       axios.get(matter.extends.toString()).then(res => {
         md.isExtending = true;
         md.extendMatter = matter;
-        store.commit('SET_CURRENT_CONTENT', md.render(res.data))
+
+        const addition = '\n' + grayMatter(store.state.current.raw_content).content;
+        store.commit('SET_CURRENT_RAW_CONTENT', res.data);
+        store.commit('SET_CURRENT_CONTENT', md.render(res.data) + md.render(addition));
       });
     }
   })

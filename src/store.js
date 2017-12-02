@@ -10,6 +10,7 @@ export default new Vuex.Store({
     lang: 'en',
     current: {
       matter: {},
+      raw_content: '',
       content: ''
     }
   },
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     },
     SET_FLAT_TOC(state, flat_toc) {
       state.flat_toc = flat_toc;
+    },
+    SET_CURRENT_RAW_CONTENT(state, raw_content) {
+      state.current.raw_content = raw_content;
     },
     SET_CURRENT_CONTENT(state, content) {
       state.current.content = content;

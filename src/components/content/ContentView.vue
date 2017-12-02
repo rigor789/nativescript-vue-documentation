@@ -2,7 +2,7 @@
     <div class="ContentView">
         <h1>ContentView</h1>
 
-        <pre v-html="currentContent"></pre>
+        <div v-html="currentContent"></div>
     </div>
 </template>
 
@@ -43,8 +43,8 @@
             return this.$router.replace('/404');
           }
 
-          const html = this.$md.render(res.data);
-          this.$store.commit('SET_CURRENT_CONTENT', html);
+          this.$store.commit('SET_CURRENT_RAW_CONTENT', res.data);
+          this.$store.commit('SET_CURRENT_CONTENT', this.$md.render(res.data));
         })
       }
     }
