@@ -2,9 +2,9 @@
 title: Using NativeScript Plugins
 ---
 
-Plugins work as in any other NativeScript app, but you may wonder how UI plugin would work with Vue.
+Plugins work as in any other NativeScript app, but you may wonder how UI plugins would work with Vue.
 
-UI plugins work almost identical to how you'd use a NativeScript UI plugin in an Angular app. For instance consider this example usage of [nativescript-gradient](https://github.com/EddyVerbruggen/nativescript-gradient) which is used in the [listview sample](samples/app/app-with-list-view.js):
+UI plugins work almost identically to how you'd use a NativeScript UI plugin in an Angular app. For instance consider this example usage of [nativescript-gradient](https://github.com/EddyVerbruggen/nativescript-gradient) which is used in the [listview sample](samples/app/app-with-list-view.js):
 
 Install the plugin by running this command in the samples folder:
 
@@ -12,13 +12,13 @@ Install the plugin by running this command in the samples folder:
 tns plugin add nativescript-gradient
 ```
 
-Open your vue file and right after the imports at the top, do:
+Open your vue file and right after the imports at the top, add:
 
 ```js
 Vue.registerElement("gradient", () => require("nativescript-gradient").Gradient);
 ```
 
-Then in your view template, add this to recreated the gradient in the sample:
+Then in your view template, add this to recreate the gradient in the sample:
 
 ```xml
 <gradient direction="to right" colors="#FF0077, red, #FF00FF" class="p-15">
