@@ -20,7 +20,7 @@ The most recent version of Vuex will be added to your package.json file.
 
 ### Import
 
-In your app's `main.js` file, import Vuex at the top, and then import the store file you created earlier:
+In your app's `main.js` file, import Vuex at the top:
 
 ```sh
 import Vuex from 'vuex'
