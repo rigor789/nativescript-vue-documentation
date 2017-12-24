@@ -62,7 +62,7 @@
     }
 
     .type-main-category > span {
-        @apply .block .uppercase .tracking-wide .text-sm .mb-2 .mt-4 .text-blue-dark
+        @apply .block .uppercase .tracking-wide .text-sm .mb-2 .mt-4 .text-blue-dark .font-bold
     }
 
     .type-sub-category > span {
