@@ -1,13 +1,13 @@
 <template>
     <div class="ContentView">
-        <h1>ContentView</h1>
-
-        <div v-html="currentContent"></div>
+        <div class="content p-8 leading-loose">
+            <div v-html="currentContent"></div>
+        </div>
     </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import {mapState} from 'vuex'
 
   export default {
     computed: {
@@ -34,12 +34,12 @@
       fetchContent() {
         const source = this.currentContentSource;
 
-        if(!source) {
-            return this.$router.replace('/404');
+        if (!source) {
+          return this.$router.replace('/404');
         }
 
         this.$http.get(`${window.location.origin}/${this.lang}/${source}`).then(res => {
-          if(res.status === 404) {
+          if (res.status === 404) {
             return this.$router.replace('/404');
           }
 

@@ -1,26 +1,20 @@
 <template>
-    <div class="App">
-        <AppSidebar/>
-
-        <div>
-            <AppHeader/>
-
-            <AppContent/>
-        </div>
+    <div class="font-sans leading-normal">
+        <AppHeader/>
+        <router-view/>
     </div>
 </template>
 
 <script>
-  import AppSidebar from './AppSidebar';
   import AppHeader from './AppHeader';
-  import AppContent from './AppContent';
 
   export default {
     created() {
-      this.$http.get('toc.json').then(({ data }) => {
+      this.$http.get('toc.json').then(({data}) => {
         const flatten = (entry, res) => {
           if (entry.path && entry.source) {
             res.push({
+              name: entry.name,
               path: entry.path,
               source: entry.source
             });
@@ -36,7 +30,7 @@
 
           return res;
         };
-        const flat_toc = flatten({ children: data }, []);
+        const flat_toc = flatten({children: data}, []);
         console.log('%cParsed Routes:', 'color: red; font-size: 18px;');
         console.table(flat_toc);
         this.$store.commit('SET_TOC', data);
@@ -44,13 +38,42 @@
       })
     },
     components: {
-      AppSidebar,
       AppHeader,
-      AppContent
     }
   }
 </script>
 
 <style>
-    @import 'https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css';
+    @tailwind preflight;
+    @tailwind utilities;
+
+    @responsive {
+        .bg-docs-gradient {
+            background: linear-gradient(90deg, #f1f5f8 50%, #fff 50%)
+        }
+    }
+
+    .NavigationItem a {
+        @apply .no-underline .text-grey-dark
+    }
+
+    .type-main-category.first > span {
+        @apply .mt-0
+    }
+
+    .type-main-category > span {
+        @apply .block .uppercase .tracking-wide .text-sm .mb-2 .mt-4 .text-blue-dark
+    }
+
+    .type-sub-category > span {
+        @apply .block .tracking-wide .text-xs .mb-2 .mt-2 .text-grey-darker
+    }
+
+    .type-sub-category > ul {
+        @apply .ml-4
+    }
+
+    pre {
+        overflow: auto;
+    }
 </style>

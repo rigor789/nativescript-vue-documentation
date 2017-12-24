@@ -1,7 +1,14 @@
 [
   {
     "name": "Introduction",
-    "path": "/",
+    "type": "main-category first",
+    "children": [
+      {
+        "name": "About NativeScript-Vue",
+        "path": "/about-nativescript-vue",
+        "source": "index.md"
+      }
+    ],
     "source": "index.md"
   },
   {
@@ -27,13 +34,25 @@
             "name": "AbsoluteLayout",
             "path": "/elements/absolute-layout",
             "source": "elements/layout/absolute-layout.md"
+          },
+          {
+            "name": "DockLayout",
+            "path": "/elements/dock-layout",
+            "source": "elements/layout/dock-layout.md"
           }
         ]
       },
       {
         "name": "Components",
         "type": "sub-category",
-        "children": []
+        "children": [
+          {
+            "name": "ActivityIndicator",
+            "path": "/components/activity-indicator",
+            "source": "elements/components/activity-indicator.md"
+          }
+
+        ]
       },
       {
         "name": "Dialogs",

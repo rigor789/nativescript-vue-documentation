@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NativeScript-Vue</title>
+    <link rel="stylesheet" href="dist/app.css">
+</head>
+<body>
+<div class="font-sans leading-normal">
+    <div class="border-t-8 border-green">
+        <div class="bg-blue-dark">
+            <div class="container flex items-center flex-wrap px-4 py-1 mx-auto">
+                <div class="w-1/4 md:flex-1">
+                    <img class="w-16 h-16" src="https://art.nativescript-vue.org/NativeScript-Vue-Green-White.svg"
+                         alt="">
+                </div>
+                <div class="w-1/2 md:w-auto text-center">
+                    <input class="w-full md:w-48 px-4 py-2 text-blue-lightest bg-blue-light rounded-full"
+                           type="text"
+                           placeholder="Search docs...">
+                </div>
+
+                <!-- Bars -->
+                <div class="w-1/4 md:hidden text-right">
+                    <div class="inline-block">
+                        <div class="w-6 h-2px bg-white mb-1"></div>
+                        <div class="w-6 h-2px bg-white mb-1"></div>
+                        <div class="w-6 h-2px bg-white"></div>
+                    </div>
+                </div>
+
+                <!-- Nav -->
+                <div class="-hidden flex flex-col md:flex-row w-full md:w-auto">
+                    <a href="#" class="no-underline text-blue-lightest md:ml-6 mr-4 py-4 md:py-0">Quick Start</a>
+                    <a href="#" class="no-underline text-blue-lightest mr-4 py-4 md:py-0">Guides</a>
+                    <a href="#" class="no-underline text-blue-lightest mr-4 py-4 md:py-0">API</a>
+                    <a href="#" class="no-underline text-blue-lightest py-4 md:py-0">Community</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Docs Nav -->
+        <div class="bg-grey-lighter p-4 md:hidden">
+            <select class="w-full p-2">
+                <optgroup label="Introduction">
+                    <option>About NativeScript-Vue</option>
+                </optgroup>
+                <optgroup label="Development">
+                    <option>Installing NativeScript</option>
+                    <option>Installing Vue</option>
+                    <option>Templates</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="md:bg-docs-gradient min-h-screen">
+            <div class="container mx-auto flex">
+                <div class="hidden md:block w-1/4">
+                    <div class="sidebar p-8">
+                        sidebar
+                    </div>
+                </div>
+                <div class="flex-1 bg-white min-h-screen">
+                    <!-- Content Area -->
+                    <div class="content p-8 leading-loose">
+                        <div>
+                            <h1>Introduction</h1>
+                            <h2>What is <a href="https://www.nativescript.org/">NativeScript</a>?</h2>
+                            <p>NativeScript is an open source framework for building truly native mobile application
+                                using JavaScript.</p>
+                            <h2>What is <a href="https://vuejs.org/">Vue.js</a>?</h2>
+                            <p>Vue (pronounced /vjuː/, like view) is a progressive framework for building user
+                                interfaces. The core library is focused on the view layer only, and is very easy to pick
+                                up and integrate with other libraries or existing projects.</p>
+                            <h2>What is NativeScript-Vue?</h2>
+                            <p>NativeScript-Vue is a NativeScript plugin which allows you to use Vue.js to craft your
+                                mobile application.</p>
+                            <p>If you have used Vue.js before you will feel right at home with NativeScript-Vue.</p>
+                            <h2>Why would you use this?</h2>
+                            <p>There are many options to build mobile apps. Here are some situations where we think
+                                NativeScript-Vue is a great fit.</p>
+                            <ul>
+                                <li><strong>You need a truly native iOS and Android app</strong>: NativeScript builds
+                                    your apps using native user interface components on iOS and Android. The apps you
+                                    build are not web based, and therefore are not subject to the limitations inherent
+                                    in WebView-based application frameworks. NativeScript also provides <a
+                                            href="http://market.nativescript.org/">an extensive collection of
+                                        plugins</a> to tie into native device features. So if you need to tie into an
+                                    iOS or Android API or feature as part of your app, you can do that with
+                                    NativeScript.
+                                </li>
+                                <li><strong>You like JavaScript</strong>: With NativeScript you write your mobile
+                                    applications in JavaScript—not Objective-C, not Swift, and not Java. If you like
+                                    JavaScript, you’ll love writing native iOS and Android apps with the same language
+                                    you use in your Web and/or Node apps.
+                                </li>
+                                <li><strong>You like Vue</strong>: Vue is known for its simple approach to the view
+                                    layer. If you like building web apps with Vue, you’ll be right at home with
+                                    NativeScript-Vue, as you’ll be using the same syntax for handling common tasks like
+                                    data binding and event handling.
+                                </li>
+                            </ul>
+                            <h2>What’s the catch?</h2>
+                            <p>If you have existing Vue experience, there are two big things you’ll need to learn to be
+                                successful with NativeScript-Vue.</p>
+                            <ul>
+                                <li><strong>Working with the NativeScript CLI</strong>: NativeScript is a framework for
+                                    building iOS and Android apps, not web apps. You’ll need to learn how a few commands
+                                    in the NativeScript CLI, and some basics of how iOS simulators and Android Virtual
+                                    Devices work.
+                                </li>
+                                <li><strong>Learning the NativeScript UI components</strong>: Because NativeScript uses
+                                    native user interface components, HTML controls like <code>&lt;div&gt;</code> and
+                                    <code>&lt;span&gt;</code> don’t exist in NativeScript. Instead you’ll need to learn
+                                    a <a href="https://docs.nativescript.org/ui/components">new set of components</a>
+                                    you can use to render your interfaces.
+                                </li>
+                            </ul>
+                            <p>Don’t worry though. Although there is a learning curve for working with NativeScript-Vue,
+                                you should find things much eaiser than learning iOS or Android from the ground up.
+                                After all, you’ll still be writing your source code in JavaScript and Vue.</p>
+                            <h2>Want to get involved?</h2>
+                            <p>NativeScript-Vue is an open source project and contributions are very much encouraged.
+                                Check out the <a
+                                        href="https://github.com/rigor789/nativescript-vue/blob/master/CONTRIBUTING.md">project’s
+                                    contributing guide</a> and <strong>join us on in the #vue channel on the <a
+                                        href="http://tinyurl.com/nativescriptSlack">NativeScript community
+                                    Slack</a></strong>.</p>
+                            <h2>How stable is this project?</h2>
+                            <p>NativeScript-Vue is relatively feature complete. At this time we’re focusing on two
+                                things:</p>
+                            <ul>
+                                <li><strong>Documentation</strong>: Not everything you can do in NativeScript-Vue is
+                                    documented on this site. We’re actively adding samples and use cases to this site,
+                                    and contributions are welcome.
+                                </li>
+                                <li><strong>Sample apps</strong>: We’re looking for people to put this plugin through
+                                    its paces and send feedback our way. If you’re interested, join the <a
+                                            href="http://tinyurl.com/nativescriptSlack">NativeScript community Slack</a>
+                                    and let us know in the #vue channel.
+                                </li>
+                            </ul>
+                            <h2>Ready to get started?</h2>
+                            <p>&lt;a router-link="/installation-nativescript" class="docute-button
+                                docute-button-success"&gt;
+                                Go to Installation - NativeScript
+                                &lt;/a&gt;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

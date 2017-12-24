@@ -29,7 +29,11 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        // options: {}
+        options: {
+          postcss: [
+            require('tailwindcss')(path.resolve(__dirname, 'tailwind.js'))
+          ]
+        }
       },
       {
         test: /\.js$/,

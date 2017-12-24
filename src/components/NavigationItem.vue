@@ -5,7 +5,7 @@
         </router-link>
         <span v-else-if="name">{{ name }}</span>
 
-        <ul v-if="children">
+        <ul v-if="children" class="list-reset">
             <NavigationItem
                     v-for="item in children"
                     :key="item.path"
@@ -32,13 +32,3 @@
     }
   }
 </script>
-
-<style scoped>
-    .type-main-category > span {
-        color: red;
-    }
-
-    .type-sub-category > span {
-        color: blue;
-    }
-</style>

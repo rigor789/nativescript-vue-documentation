@@ -1,13 +1,4 @@
 <template>
-    <div class="AppContent">
-        <ContentPane>
-            <router-view />
-        </ContentPane>
-
-        <PreviewPane v-if="frontMatter.preview">
-            {{ frontMatter.preview }}
-        </PreviewPane>
-    </div>
 </template>
 
 <script>
