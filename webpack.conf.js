@@ -50,11 +50,11 @@ module.exports = {
       template: 'src/index.html'
     }),
     new CopyWebpackPlugin(['docs']),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'server',
-      analyzerHost: '127.0.0.1',
-      analyzerPort: 8888,
-    })
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'server',
+    //   analyzerHost: '127.0.0.1',
+    //   analyzerPort: 8888,
+    // })
   ],
 
   node: {
