@@ -6,7 +6,11 @@ import MarkdownItExtends from '~/markdown-it-extends'
 import * as matter from 'gray-matter'
 
 export default function (store) {
-  const md = MarkdownIt();
+  const md = MarkdownIt({
+    html: true,
+    linkify: true,
+    typographer: true
+  });
 
   md.use(MarkdownItFrontMatter, (fm) => {
     const parsed = matter(`---\n${fm}\n---`).data;

@@ -1,8 +1,6 @@
 <template>
-    <div class="ContentView">
-        <div class="content p-8 leading-loose">
-            <div v-html="currentContent"></div>
-        </div>
+    <div class="ContentView p-4 md:p-8">
+        <div class="markdown-body" v-html="currentContent"></div>
     </div>
 </template>
 
@@ -38,6 +36,7 @@
           return this.$router.replace('/404');
         }
 
+        this.$store.commit('SET_LOADING', true);
         this.$http.get(`${window.location.origin}/${this.lang}/${source}`).then(res => {
           if (res.status === 404) {
             return this.$router.replace('/404');
@@ -45,6 +44,7 @@
 
           this.$store.commit('SET_CURRENT_RAW_CONTENT', res.data);
           this.$store.commit('SET_CURRENT_CONTENT', this.$md.render(res.data));
+          this.$store.commit('SET_LOADING', false);
         })
       }
     }

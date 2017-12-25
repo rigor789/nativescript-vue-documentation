@@ -2,10 +2,16 @@
     <div class="AppHeader">
         <div class="bg-blue-dark border-t-8 border-green">
             <div class="container flex items-center flex-wrap px-4 py-1 mx-auto">
-                <div class="w-1/4 md:flex-1">
-                    <img class="w-16 h-16" src="https://art.nativescript-vue.org/NativeScript-Vue-Green-White.svg"
-                         alt="">
-                </div>
+                <router-link to="/" class="w-1/4 md:flex-1">
+                    <div class="relative w-16 h-16">
+                        <img class="w-16 h-16 absolute pin"
+                             src="https://art.nativescript-vue.org/NativeScript-Vue-Green-White.svg"
+                             alt="NativeScript-Vue Logo">
+                        <img class="w-16 h-16 absolute pin transition-all-ease hover:opacity-0"
+                             src="https://art.nativescript-vue.org/NativeScript-Vue-White-Green.svg"
+                             alt="NativeScript-Vue Logo">
+                    </div>
+                </router-link>
                 <div class="w-1/2 md:w-auto text-center">
                     <input class="w-full md:w-48 px-4 py-2 text-blue-lightest bg-blue-light rounded-full"
                            type="text"
@@ -33,10 +39,12 @@
         </div>
 
         <!-- Mobile Docs Nav -->
-        <div class="bg-grey-lighter p-4 md:hidden">
-            <select class="w-full p-2" v-model="selectedRoute">
-                <option v-for="item in flat_toc" :key="item.name" :value="item.path">{{ item.name }}</option>
-            </select>
+        <div class="bg-grey-lighter md:hidden">
+            <div class="container mx-auto p-4">
+                <select class="w-full p-2" v-model="selectedRoute">
+                    <option v-for="item in flat_toc" :key="item.name" :value="item.path">{{ item.name }}</option>
+                </select>
+            </div>
         </div>
     </div>
 </template>

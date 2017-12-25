@@ -73,7 +73,11 @@
         @apply .ml-4
     }
 
-    pre {
-        overflow: auto;
+    .markdown-body a {
+        @apply .text-green
+    }
+
+    .transition-all-ease {
+        transition: all .3s ease;
     }
 </style>

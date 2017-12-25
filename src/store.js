@@ -12,7 +12,8 @@ export default new Vuex.Store({
       matter: {},
       raw_content: '',
       content: ''
-    }
+    },
+    loading: false,
   },
 
   mutations: {
@@ -30,6 +31,9 @@ export default new Vuex.Store({
     },
     SET_FRONT_MATTER(state, matter) {
       state.current.matter = matter;
+    },
+    SET_LOADING(state, loading) {
+      state.loading = loading
     }
   }
 })
