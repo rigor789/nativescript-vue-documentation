@@ -14,6 +14,7 @@ export default new Vuex.Store({
       content: ''
     },
     loading: false,
+    quickStartModalVisible: false,
   },
 
   mutations: {
@@ -34,6 +35,9 @@ export default new Vuex.Store({
     },
     SET_LOADING(state, loading) {
       state.loading = loading
+    },
+    SET_QUICK_START_MODAL_VISIBLE(state, quickStartModalVisible) {
+      state.quickStartModalVisible = quickStartModalVisible
     }
   }
 })

@@ -12,10 +12,16 @@
                              alt="NativeScript-Vue Logo">
                     </div>
                 </router-link>
-                <div class="w-1/2 md:w-auto text-center">
+                <div class="w-1/2 md:w-auto text-center relative">
                     <input class="w-full md:w-48 px-4 py-2 text-blue-lightest bg-blue-light rounded-full"
-                           type="text"
-                           placeholder="Search docs...">
+                           type="search"
+                           placeholder="Search coming soon."
+                           disabled
+                    >
+
+                    <div class="hidden absolute ml-2 mt-2">
+                        <div class="border bg-white rounded shadow w-48"></div>
+                    </div>
                 </div>
 
                 <!-- Bars -->
@@ -30,7 +36,7 @@
                 <!-- Nav -->
                 <div :class="{ hidden: isMobile && !navOpen, flex: isMobile && navOpen }"
                      class="flex-col md:flex-row w-full md:w-auto">
-                    <a href="#" class="no-underline text-blue-lightest md:ml-6 mr-4 py-4 md:py-0">Quick Start</a>
+                    <a href="#" @click.prevent="showModal" class="no-underline text-blue-lightest md:ml-6 mr-4 py-4 md:py-0">Quick Start</a>
                     <a href="#" class="no-underline text-blue-lightest mr-4 py-4 md:py-0">Guides</a>
                     <a href="#" class="no-underline text-blue-lightest mr-4 py-4 md:py-0">API</a>
                     <a href="#" class="no-underline text-blue-lightest py-4 md:py-0">Community</a>
@@ -78,6 +84,11 @@
     watch: {
       selectedRoute(new_route) {
         this.$router.push(new_route)
+      }
+    },
+    methods: {
+      showModal() {
+        this.$store.commit('SET_QUICK_START_MODAL_VISIBLE', true)
       }
     }
   }

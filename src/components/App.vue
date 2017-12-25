@@ -1,5 +1,6 @@
 <template>
     <div class="font-sans leading-normal">
+        <QuickStart />
         <AppHeader/>
         <router-view/>
     </div>
@@ -7,6 +8,7 @@
 
 <script>
   import AppHeader from './AppHeader';
+  import QuickStart from './content/QuickStart';
 
   export default {
     created() {
@@ -38,6 +40,7 @@
       })
     },
     components: {
+      QuickStart,
       AppHeader,
     }
   }
