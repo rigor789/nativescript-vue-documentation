@@ -5,10 +5,10 @@
                 <router-link to="/" class="w-1/4 md:flex-1">
                     <div class="relative w-16 h-16">
                         <img class="w-16 h-16 absolute pin"
-                             src="https://art.nativescript-vue.org/NativeScript-Vue-Green-White.svg"
+                             src="https://art.nativescript-vue.org/NativeScript-Vue-White-Green.svg"
                              alt="NativeScript-Vue Logo">
                         <img class="w-16 h-16 absolute pin transition-all-ease hover:opacity-0"
-                             src="https://art.nativescript-vue.org/NativeScript-Vue-White-Green.svg"
+                             src="https://art.nativescript-vue.org/NativeScript-Vue-Green-White.svg"
                              alt="NativeScript-Vue Logo">
                     </div>
                 </router-link>
