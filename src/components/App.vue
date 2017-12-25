@@ -1,5 +1,5 @@
 <template>
-    <div class="font-sans leading-normal">
+    <div class="font-sans leading-normal" :class="{'max-h-screen': modalVisible, 'overflow-hidden': modalVisible}">
         <QuickStart />
         <AppHeader/>
         <router-view/>
@@ -9,8 +9,14 @@
 <script>
   import AppHeader from './AppHeader';
   import QuickStart from './content/QuickStart';
+  import {mapState} from 'vuex';
 
   export default {
+    computed: {
+      ...mapState({
+        modalVisible: state => state.quickStartModalVisible
+      })
+    },
     created() {
       this.$http.get('toc.json').then(({data}) => {
         const flatten = (entry, res) => {
@@ -40,8 +46,8 @@
       })
     },
     components: {
-      QuickStart,
       AppHeader,
+      QuickStart
     }
   }
 </script>

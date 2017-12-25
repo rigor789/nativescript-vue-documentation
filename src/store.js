@@ -14,7 +14,7 @@ export default new Vuex.Store({
       content: ''
     },
     loading: false,
-    quickStartModalVisible: true,
+    quickStartModalVisible: false,
   },
 
   mutations: {
