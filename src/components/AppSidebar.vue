@@ -1,5 +1,5 @@
 <template>
-    <div class="AppSidebar p-8">
+    <div class="AppSidebar p-4 md:p-8">
         <ul class="list-reset">
             <NavigationItem :children="toc"/>
         </ul>
